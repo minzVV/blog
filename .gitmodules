@@ -1,3 +1,6 @@
 [submodule "themes/hexo-theme-amazing"]
 	path = themes/hexo-theme-amazing
 	url = git@github.com:minzVV/hexo-theme-amazing.git
+[submodule "themes/icarus"]
+	path = themes/icarus
+	url = git@github.com:minzVV/icarus.git
