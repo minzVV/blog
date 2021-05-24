@@ -43,6 +43,7 @@ comments: false
   + [Hexo](https://github.com/hexojs/hexo)    **Author**:Hexo contributors
   + [Icarus](https://github.com/ppoffice/hexo-theme-icarus)   **Author**:ppoffice
   + [amazing](https://github.com/removeif/hexo-theme-amazing)   **Author**:removeif
+  + [gitalk](https://github.com/gitalk)   **Author**:Gitalk contributors
 
 
 <br>
