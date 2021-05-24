@@ -27,8 +27,8 @@ comments: false
 ### 本站信息
 ---
 
-+ 博客主要记录关于数据分析的技能学习的笔记类文章，好记性不如烂笔头嘛～
-+ 另外会记录一下面试练习题以及一些自己遇到的坑(已解决或者未解决的),由于表达能力有限，有疑问处欢迎留言。
++ 博客主要记录关于**数据分析**的技能学习的**笔记类文章**，好记性不如烂笔头嘛～
++ 另外会记录一下**面试练习题**以及一些自己遇到的坑(已解决或者未解决的),由于表达能力有限，有疑问处欢迎留言。
 + 本站文章若无特别说明，均为原创，转载请注明来源。
 
 <br>
@@ -37,12 +37,12 @@ comments: false
 ---
 
 + 网站采用的[hexo-theme-amazing主题](https://github.com/removeif/hexo-theme-amazing) 
-+ 追求尽可能的简洁，清晰，易用。
-+ 在hexo-theme-amazing主题之上进行了部分修改。
++ 追求尽可能的**简洁**，清晰，易用。
++ 在**hexo-theme-amazing**主题之上进行了部分修改。
 + 感谢以下开源项目贡献者(不完全统计，如有遗漏欢迎留言)：
-  + [Hexo](https://github.com/hexojs/hexo)    Author:Hexo contributors
-  + [Icarus](https://github.com/ppoffice/hexo-theme-icarus)   Author:ppoffice
-  + [amazing](https://github.com/removeif/hexo-theme-amazing)   Author:removeif
+  + [Hexo](https://github.com/hexojs/hexo)    **Author**:Hexo contributors
+  + [Icarus](https://github.com/ppoffice/hexo-theme-icarus)   **Author**:ppoffice
+  + [amazing](https://github.com/removeif/hexo-theme-amazing)   **Author**:removeif
 
 
 <br>
