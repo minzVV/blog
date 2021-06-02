@@ -2,9 +2,9 @@
 title: 每日一题 - 寻找第N高的数据
 date: 2021-05-29 20:41:02
 tags:
-    - SQL
+    - MySQL练习题
 categories:
-    - [MySQL,练习题]
+    - [SQL,MySQL]
 ---
 
 > 摘要

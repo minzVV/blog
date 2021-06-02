@@ -2,12 +2,12 @@
 ---
 title: Matplotlib - 常用图表 & python表格样式
 thumbnail: 
-date: 2021-05-30 20:41:02
+date: 2020-08-09 20:41:02
 toc: true
 tags:
     - python
 categories:
-    - [python,library]
+    - [python,Matplotlib]
 ---
 
 > 摘要
@@ -53,33 +53,33 @@ ts = ts.cumsum()
 
 ts.plot(
        # line(折线图),bar(柱状图),barh(柱状图-横),kde(密度图)
-    
        kind = 'line',
+
        # 图例标签，Dataframe格式以列名为label
-    
        label = 'nb',
+
        # 风格字符串，这里包括了linestyle，marker，color
-    
        style = '--g.',
        color = 'b',
        alpha = 0.6,
        grid = True,
+
        # 是否以index作为横坐标轴
-    
        use_index = True,
+
        # 横坐标旋转角度
-    
        rot = 45,
+
        # y轴界限
-    
        ylim = [-50,50],
+
        # y轴刻度值
-    
        yticks = list(range(-50,50,10)),
+
        figsize = (12,8),
        title = 'normal',
+
        # 是否显示图例，一般直接用plt.legend()
-    
        legend = True
        )
 ```
@@ -98,7 +98,6 @@ ts.plot(
 df = pd.DataFrame(np.random.randn(1000,4),index=ts.index,columns=list('abcd'))
 
 # 返回累计和
-
 df = df.cumsum()
 
 # 参数设置
@@ -174,14 +173,12 @@ y2 = -np.random.rand(10)
 
 plt.bar(x,y1,width = 1,facecolor = 'yellowgreen',edgecolor = 'white',yerr = y1*0.1)
 plt.bar(x,y2,width = 1,facecolor = 'lightskyblue',edgecolor = 'white',yerr = y2*0.1)
+
+# 参数解析：
 # width:宽度比例
-
 # facecolor:柱状图里填充的颜色，edgecolor:边框的颜色
-
 # left - 每个柱x轴左边界，bottom - 每个柱y轴下边界 → bottom扩展可化成甘特图 Gantt Chart
-
 # align：决定整个bar图分布，默认left表示从左边界开始绘制，center会将图绘制在中间位置
-
 # fig.tight_layout()
 
 plt.grid()
@@ -191,6 +188,7 @@ for i,j in zip(x,y1):
     plt.text(i-0.15,0.05,'%.2f' % j ,color = 'white')
 for i,j in zip(x,y2):
     plt.text(i-0.15,-0.1,'%.2f' % -j ,color = 'white')
+
 # zip() 函数用于将可迭代对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表
 ```
 
@@ -228,16 +226,12 @@ plt.table(cellText = data,
          rowLoc = 'right',
          loc = 'bottom')
 
+# 参数解析：
 # cellText：表格文本
-
 # cellLoc：cell内文本对齐位置
-
 # rowLabels：行标签
-
 # colLabels：列标签
-
 # rowLoc：行标签对齐位置
-
 # loc：表格位置 → left,right,top,bottom
 
 plt.xticks([])
@@ -286,7 +280,6 @@ df2.plot.area(stacked = False,colormap = 'Set2',alpha = 0.6,ax = axes[1])
 ```python
 # 填图
 
-
 x1 = np.linspace(0,5*np.pi,1000)
 y3 = np.sin(x1)
 y5 = np.sin(2*x1)
@@ -307,39 +300,37 @@ for i in range(2):
 ```python
 # 饼图
 
-
 s = pd.Series(3*np.random.rand(4),index=['a','b','c','d'],name = 'series')
 plt.axis('equal')
 plt.pie(s,
        # 指定每部分的偏移量
-        
        explode=[0.1,0,0,0],
-       # 标签
-        
+
+       # 标签 
        labels = s.index,
+
        # 颜色
-        
        colors = ['r','g','b','c'],
+
        # 饼图上的数据标签显示方式
-        
        autopct='%.2f%%',
+
        # 每个饼切片的中心和通过autopct生成的文本开始之间的比例
-        
        pctdistance=0.6,
+
        # 被画饼标记的直径，默认值：1.1
-        
        labeldistance=1.2,
+
        # 阴影
-        
        shadow = True,
+
        # 开始角度
-        
        startangle=0,
+
        # 半径
-        
        radius=1.5,
+
        # 图框
-        
        frame=False
        )
 # counterclock:指定指针方向，顺时针或者逆时针
@@ -365,20 +356,20 @@ print(s)
 s = pd.Series(np.random.randn(1000))
 s.hist(
       # 箱子个数
-    
       bins = 20,
+
       # 风格：bar,barstacked,step,stepfilled
-     
       histtype = 'bar',
+
       # 对齐方式：left,right,mid
-    
       align = 'mid',
+
       # 水平还是垂直：'horizontal','vertical'
-    
       orientation = 'vertical',
+
       alpha = 0.5,
+
       # 标准化
-    
       normed = True
       )
 
@@ -496,7 +487,6 @@ ax2 = plt.subplot(122)
 
 # ax = fig.add_subplot(111,polar = True)
 
-
 ax1.plot(theta,theta*3,linestyle = '--',lw = 1)
 ax1.plot(s,linestyle = '--',marker = '.',lw = 2)
 ax2.plot(theta,theta*3,linestyle = '--',lw = 1)
@@ -515,7 +505,6 @@ plt.grid()
 ```python
 # 极坐标参数设置
 
-
 theta = np.arange(0,2*np.pi,0.02)
 plt.figure(figsize = (8,4))
 ax1 = plt.subplot(121,projection = 'polar')
@@ -524,33 +513,26 @@ ax1.plot(theta,theta/6,'--',lw = 2)
 ax2.plot(theta,theta/6,'--',lw = 2)
 
 # set_theta_direction : 坐标轴正方形，默认逆时针
-
 ax2.set_theta_direction(-1)
 
 # set_thetagrids : 设置极坐标角度网格线显示及标签 → 网格和标签数量一致
-
 ax2.set_thetagrids(np.arange(0.0,360.0,90),['a','b','c','d'])
-# set_rgrids : 设置极径网格线显示，其中参数必须是正数
 
+# set_rgrids : 设置极径网格线显示，其中参数必须是正数
 ax2.set_rgrids(np.arange(0.2,2,0.4))
 
 # set_theta_offset : 设置角度偏移,逆时针,弧度制
-
 ax2.set_theta_offset(np.pi/2)
 
 # set_rlim : 设置显示的极径范围
-
 ax2.set_rlim(0.2,1.2)
 
 # set_rmax : 设置显示的极径最大值
-
 ax2.set_rmax(2)
 
 # set_rticks : 设置极径网格线的显示范围
-
 ax2.set_rticks(np.arange(0.1,1.5,0.2))
 ```
-
 
 
 
@@ -562,7 +544,6 @@ ax2.set_rticks(np.arange(0.1,1.5,0.2))
 # 雷达图1 - 极坐标的折线图/填图
 
 # plt.plot画出的雷达图首尾不相连
-
 
 plt.figure(figsize = (12,8))
 
@@ -596,7 +577,6 @@ ax1.fill(theta,data3,alpha = 0.2)
 # 雷达图2 - 极坐标的折线图/填图 
 
 # plt.polar() → 首尾闭合
-
 
 labels = np.array(['a','b','c','d','e','f'])
 dataLenth = 6
@@ -670,7 +650,6 @@ plt.thetagrids(np.arange(0.0,360.0,90),[])
 
 # 6、异常值：内限之外→中度异常，外限之外→极度异常
 
-
 fig,axes = plt.subplots(2,1,figsize = (12,8))
 df = pd.DataFrame(np.random.rand(10,5),columns=['a','b','c','d','e'])
 color = dict(boxes = 'DarkGreen',whiskers = 'DarkOrange',medians = 'DarkBlue',
@@ -699,7 +678,6 @@ df.plot.box(vert = False,
 ```python
 # .boxplot
 
-
 df = pd.DataFrame(np.random.rand(10,5),columns=['a','b','c','d','e'])
 plt.figure(figsize = (12,8))
 
@@ -707,34 +685,33 @@ plt.figure(figsize = (12,8))
 
 f = df.boxplot(
     # 异常点的形状
-    
     sym = 'o',
+
     # 是否垂直
-    
     vert = True,
+
     # IQR，默认1.5，可以设置区间[5,95]，代表上下边缘为数据的95%和5%
-    
-    whis = 1.5
+    whis = 1.5,
+
     # 上下四分位框内是否填充
-    
     patch_artist = True,
+
     # 是否有均值线及其形状
-    
     meanline = False,showmeans = True,
+
     # 是否显示箱线
-    
     showbox = True,
+
     # 是否显示边缘线
-    
     showcaps = True,
+
     # 是否显示异常值
-    
     showfliers = True,
+
     # 中间箱体是否缺口
-    
     notch = False,
+
     # 返回类型为字典
-    
     return_type = 'dict'
 )
 
@@ -745,10 +722,9 @@ print(f)
 
 for box in f['boxes']:
     # 箱体边框颜色
-    
     box.set(color = 'b',linewidth = 1)
+
     # 箱体内部填充颜色
-    
     box.set(facecolor = 'b',alpha = 0.5)
 
 
@@ -761,16 +737,12 @@ for median in f['medians']:
 for flier in f['fliers']:
     flier.set(marker = 'o',color = 'y',alpha = 0.5)
 
+# 参数解析：
 # boxes：箱线
-
 # medians：中位线的横线
-
 # whiskers：从box到error bar之间的竖线
-
 # fliers：异常值
-
 # caps：error bar横线
-
 # means：均值的横线
 ```
 
@@ -782,7 +754,6 @@ for flier in f['fliers']:
 # plt.boxplot()  绘制
 
 # 分组汇总
-
 
 df = pd.DataFrame(np.random.rand(10,2),columns = ['col1','col2'])
 df['x'] = pd.Series(['a','a','a','a','a','b','b','b','b','b'])
@@ -841,14 +812,13 @@ df.style.applymap(color_neg_red)
 # style.applymap() → 自动调用其中的函数
 ```
 
-![image-20190814101035687](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101035687.png)
+![](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101035687.png)
 
 #### 2、样式处理
 
 
 ```python
 # 按列/行处理样式：style.apply()
-
 
 df = pd.DataFrame(np.random.randn(10,4),columns=['a','b','c','d'])
 sty = df.style
@@ -866,14 +836,13 @@ def highlight_max(s):
 
 # subset:选择索引进行函数处理
 
-
 df.style.apply(highlight_max,axis = 1,
              subset = pd.IndexSlice[2:5,['b','d']])
 
 # df[2:5].style.apply(highlight_max,subset = ['b','d'])
 ```
 
-![image-20190814101222459](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101222459.png)
+![](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101222459.png)
 
 #### 3、内容显示
 
@@ -896,7 +865,7 @@ df = pd.DataFrame(np.random.randn(10,4),columns=['a','b','c','d'])
 df.head().style.format({'b':"{:.2%}",'c':"{:+.3f}",'d':"{:.3f}"})
 ```
 
-![image-20190814101425327](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101425327.png)
+![](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101425327.png)
 
 ### 表格进阶
 
@@ -908,13 +877,12 @@ df.head().style.format({'b':"{:.2%}",'c':"{:+.3f}",'d':"{:.3f}"})
 
 # 1、定位空值
 
-
 df = pd.DataFrame(np.random.rand(5,4),columns=list('abcd'))
 df['a'][2] = np.nan
 df.style.highlight_null(null_color = 'yellow')
 ```
 
-![image-20190814101514145](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101514145.png)
+![](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101514145.png)
 
 #### 2、应用 — 色彩映射
 
@@ -922,12 +890,11 @@ df.style.highlight_null(null_color = 'yellow')
 ```python
 # 2、色彩映射
 
-
 df = pd.DataFrame(np.random.rand(10,4),columns=list('abcd'))
 df.style.background_gradient(cmap = 'Greens',axis = 1,low = 0,high = 1)
 ```
 
-![image-20190814101555712](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101555712.png)
+![](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101555712.png)
 
 #### 3、应用 — 条形图显示
 
@@ -935,20 +902,18 @@ df.style.background_gradient(cmap = 'Greens',axis = 1,low = 0,high = 1)
 ```python
 # 3、条形图
 
-
 df = pd.DataFrame(np.random.rand(10,4),columns=list('abcd'))
 df.style.bar(subset = ['a','b'],color = '#d65f5f',width = 100)
 # width: 最长长度在格子的占比
 ```
 
-![image-20190814101656082](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101656082.png)
+![](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101656082.png)
 
 #### 4、应用 — 分段式显示
 
 
 ```python
 # 分段式构建样式
-
 
 df = pd.DataFrame(np.random.rand(10,4),columns=list('abcd'))
 df['a'][3] = np.nan
@@ -958,7 +923,7 @@ df.style.\
     highlight_null(null_color = 'yellow')
 ```
 
-![image-20190814101817617](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101817617.png)
+![](https://gitee.com/minzvv/blog_images/raw/master/matplotlib/image-20190814101817617.png)
 
 ## 总结
 
