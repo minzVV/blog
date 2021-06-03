@@ -1,4 +1,3 @@
-
 ---
 title: MySQL数据库 - 初步认识
 thumbnail: 

@@ -1,4 +1,3 @@
-
 ---
 title: python数据类型 - 字符串
 thumbnail: 

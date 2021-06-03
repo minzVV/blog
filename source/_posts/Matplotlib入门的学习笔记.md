@@ -1,11 +1,10 @@
-
 ---
 title: Matplotlib - 常用图表 & python表格样式
 thumbnail: 
 date: 2020-08-09 20:41:02
 toc: true
 tags:
-    - python
+    - Python库
 categories:
     - [python,Matplotlib]
 ---

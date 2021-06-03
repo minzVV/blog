@@ -4,7 +4,7 @@ thumbnail:
 date: 2020-08-11 20:41:02
 toc: true
 tags:
-    - python
+    - Python库
 categories:
     - [python,Seaborn]
 ---

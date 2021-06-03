@@ -1,4 +1,3 @@
-
 ---
 title: python数据类型 - 列表与字典
 thumbnail: 
