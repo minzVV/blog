@@ -1,5 +1,5 @@
 ---
-title: 可视化 - 数据分布图表绘制part1
+title: 如何用图表直观显示数据的分布情况？
 thumbnail: 
 date: 2020-08-19 20:41:02
 toc: true

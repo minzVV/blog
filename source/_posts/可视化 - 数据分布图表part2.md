@@ -1,5 +1,5 @@
 ---
-title: 可视化 - 数据分布图表绘制part2
+title: 一眼就get到数据分布情况的图表？
 thumbnail: 
 date: 2020-08-22 20:41:02
 toc: true
